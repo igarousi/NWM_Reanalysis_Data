@@ -1,0 +1,108 @@
+Started at:  2020-06-05 13:56:15.399822
+open_mfdataset is finished.
+isel is finished.
+NWM_2013_01_SNEQV
+0:08:12.714045
+Started at:  2020-06-05 14:04:30.071936
+open_mfdataset is finished.
+isel is finished.
+NWM_2013_02_SNEQV
+0:08:17.495390
+/home/igarousi/.local/lib/python3.7/site-packages/xarray/coding/times.py:426: SerializationWarning: Unable to decode time axis into full numpy.datetime64 objects, continuing using cftime.datetime objects instead, reason: dates out of range
+  dtype = _decode_cf_datetime_dtype(data, units, calendar, self.use_cftime)
+Started at:  2020-06-05 14:12:49.486437
+Traceback (most recent call last):
+  File "./code/NWM_RRv2_Retrieve.py", line 95, in <module>
+    main(input_dir, output_dir, data_dir, dataset, nrcs_file, year, month, variable, output_name_1, output_name_2)
+  File "./code/NWM_RRv2_Retrieve.py", line 79, in main
+    NWM_values = Get_NWM_values(year, month, data_dir, variable, Site_Info, output_dir, output_name_2)
+  File "./code/NWM_RRv2_Retrieve.py", line 48, in Get_NWM_values
+    chunks={'y':1000 , 'x':1000})
+  File "/home/igarousi/.local/lib/python3.7/site-packages/xarray/backends/api.py", line 908, in open_mfdataset
+    datasets = [open_(p, **open_kwargs) for p in paths]
+  File "/home/igarousi/.local/lib/python3.7/site-packages/xarray/backends/api.py", line 908, in <listcomp>
+    datasets = [open_(p, **open_kwargs) for p in paths]
+  File "/home/igarousi/.local/lib/python3.7/site-packages/xarray/backends/api.py", line 538, in open_dataset
+    ds = maybe_decode_store(store)
+  File "/home/igarousi/.local/lib/python3.7/site-packages/xarray/backends/api.py", line 453, in maybe_decode_store
+    use_cftime=use_cftime,
+  File "/home/igarousi/.local/lib/python3.7/site-packages/xarray/conventions.py", line 587, in decode_cf
+    ds = Dataset(vars, attrs=attrs)
+  File "/home/igarousi/.local/lib/python3.7/site-packages/xarray/core/dataset.py", line 540, in __init__
+    data_vars, coords, compat="broadcast_equals"
+  File "/home/igarousi/.local/lib/python3.7/site-packages/xarray/core/merge.py", line 467, in merge_data_and_coords
+    objects, compat, join, explicit_coords=explicit_coords, indexes=indexes
+  File "/home/igarousi/.local/lib/python3.7/site-packages/xarray/core/merge.py", line 552, in merge_core
+    collected = collect_variables_and_indexes(aligned)
+  File "/home/igarousi/.local/lib/python3.7/site-packages/xarray/core/merge.py", line 277, in collect_variables_and_indexes
+    variable = as_variable(variable, name=name)
+  File "/home/igarousi/.local/lib/python3.7/site-packages/xarray/core/variable.py", line 140, in as_variable
+    obj = obj.to_index_variable()
+  File "/home/igarousi/.local/lib/python3.7/site-packages/xarray/core/variable.py", line 463, in to_index_variable
+    self.dims, self._data, self._attrs, encoding=self._encoding, fastpath=True
+  File "/home/igarousi/.local/lib/python3.7/site-packages/xarray/core/variable.py", line 2092, in __init__
+    self._data = PandasIndexAdapter(self._data)
+  File "/home/igarousi/.local/lib/python3.7/site-packages/xarray/core/indexing.py", line 1372, in __init__
+    self.array = utils.safe_cast_to_index(array)
+  File "/home/igarousi/.local/lib/python3.7/site-packages/xarray/core/utils.py", line 103, in safe_cast_to_index
+    index = pd.Index(np.asarray(array), **kwargs)
+  File "/home/igarousi/anaconda3/lib/python3.7/site-packages/numpy/core/_asarray.py", line 85, in asarray
+    return array(a, dtype, copy=False, order=order)
+  File "/home/igarousi/.local/lib/python3.7/site-packages/xarray/core/indexing.py", line 557, in __array__
+    return np.asarray(array[self.key], dtype=None)
+  File "/home/igarousi/anaconda3/lib/python3.7/site-packages/numpy/core/_asarray.py", line 85, in asarray
+    return array(a, dtype, copy=False, order=order)
+  File "/home/igarousi/.local/lib/python3.7/site-packages/xarray/coding/variables.py", line 72, in __array__
+    return self.func(self.array)
+  File "/home/igarousi/.local/lib/python3.7/site-packages/xarray/coding/times.py", line 157, in decode_cf_datetime
+    dates = _decode_datetime_with_pandas(flat_num_dates, units, calendar)
+  File "/home/igarousi/.local/lib/python3.7/site-packages/xarray/coding/times.py", line 122, in _decode_datetime_with_pandas
+    pd.to_timedelta(flat_num_dates.min(), delta) + ref_date
+  File "/home/igarousi/anaconda3/lib/python3.7/site-packages/numpy/core/_methods.py", line 34, in _amin
+    return umr_minimum(a, axis, None, out, keepdims, initial, where)
+ValueError: zero-size array to reduction operation minimum which has no identity
+Started at:  2020-06-05 14:15:08.189825
+open_mfdataset is finished.
+isel is finished.
+NWM_2013_04_SNEQV
+0:06:25.269415
+Started at:  2020-06-05 14:21:35.509331
+open_mfdataset is finished.
+isel is finished.
+NWM_2013_05_SNEQV
+0:06:17.409534
+Started at:  2020-06-05 14:27:55.306273
+open_mfdataset is finished.
+isel is finished.
+NWM_2013_06_SNEQV
+0:06:03.703241
+Started at:  2020-06-05 14:34:00.938378
+open_mfdataset is finished.
+isel is finished.
+NWM_2013_07_SNEQV
+0:06:01.516248
+Started at:  2020-06-05 14:40:05.002989
+open_mfdataset is finished.
+isel is finished.
+NWM_2013_08_SNEQV
+0:06:03.858671
+Started at:  2020-06-05 14:46:10.981026
+open_mfdataset is finished.
+isel is finished.
+NWM_2013_09_SNEQV
+0:05:45.730046
+Started at:  2020-06-05 14:51:58.645276
+open_mfdataset is finished.
+isel is finished.
+NWM_2013_10_SNEQV
+0:06:16.158170
+Started at:  2020-06-05 14:58:17.124363
+open_mfdataset is finished.
+isel is finished.
+NWM_2013_11_SNEQV
+0:05:40.152130
+Started at:  2020-06-05 15:03:59.225267
+open_mfdataset is finished.
+isel is finished.
+NWM_2013_12_SNEQV
+0:06:06.597065

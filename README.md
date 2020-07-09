@@ -1,7 +1,7 @@
 # Introduction
 This repository contains scripts developed to download and retrieve National Water Model reanalysis data for specified locations. 
 
-1. First, follow instruction in [here](https://github.com/igarousi/XSEDE/tree/master/run_notebooks_on_comet) to run a jupyterlab/jupyter notebook on COMET. After openning jupyter lab, browse to the code directory and do the following.
+1. First, follow instruction in [here](https://github.com/igarousi/XSEDE/tree/master/run_notebooks_on_comet) to run a jupyterlab/jupyter notebook on COMET. After openning jupyter lab, browse to the **code directory** and do the following.
 
 2. **NWM_RRv2_Download.ipynb**: This jupyter notebook downloads the National Water Model (NWM) retrospective reanalysis data. Two batch scripts are used within this notebook.
 

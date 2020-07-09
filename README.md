@@ -5,7 +5,7 @@ This repository contains scripts developed to download and retrieve National Wat
 
 2. **NWM_RRv2_Download.ipynb**: This jupyter notebook downloads the National Water Model (NWM) retrospective reanalysis data. Two batch scripts are used within this notebook.
 
-3. **run.slurm.annual.large.short**: Submit this slurm schedular (on a terminal) that runs **NWM_RRv2_Retrieve.py** script on a compute node (large memory). This is a time consuming process. That is why it needs to be run for each year separately. Make sure to define `year` in the slurm batch script. It usually takes ~ 12 hours for one year to be completed. Results will be saved as zipped CSV files in output directory.  
+3. **run.slurm.annual.large**: Submit this slurm schedular (on a terminal) that runs **NWM_RRv2_Retrieve.py** script on a compute node (large memory). This is a time consuming process. That is why it needs to be run for each year separately. Make sure to define `year` in the slurm batch script. It usually takes ~ 12 hours for one year to be completed. Results will be saved as zipped CSV files in output directory.  
 
 4. **NWM_RRv2_Pre-processing.ipynb**: This jupyter notebook uses results from NWM_RRv2_Retrieve.py (i.e., zipped CSV files) to create single CSV for specified variables. 
 

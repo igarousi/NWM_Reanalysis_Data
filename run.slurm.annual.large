@@ -1,0 +1,38 @@
+#!/bin/bash
+#SBATCH --job-name="python-xarray"
+#SBATCH --output="python.%j.%N.out"
+###SBATCH --partition=compute
+#SBATCH --partition=large-shared
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=24
+#SBATCH --export=ALL
+#SBATCH --time=48:00:00
+#SBATCH --mem=800G
+
+# Activate user installed python
+### conda info
+### conda config --show-sources
+### conda info --envs 
+### source activate base [only works from terminal]
+source ~/anaconda3/etc/profile.d/conda.sh
+conda activate base
+
+# Define variables
+export input_dir='./input'
+export output_dir='./output'
+export data_dir='/oasis/scratch/comet/igarousi/temp_project'
+export dataset='LDASOUT'
+export nrcs_file='NRCS_SNOTEL_no_Alaska_Joint_w_CEC.csv'
+export year=2007
+export output_name_1='SNOTEL_indices_at_NWM.csv'
+export output_name_2='NWM'
+export file='./input/variables.txt'
+
+# Run
+for month in {01..12}
+    do for variable in `cat ./$file`
+           do python ./code/NWM_RRv2_Retrieve.py $input_dir $output_dir $data_dir $dataset $nrcs_file $year $month $variable $output_name_1 ${output_name_2}_${year}_${month}_${variable}
+       done
+done
+
+
